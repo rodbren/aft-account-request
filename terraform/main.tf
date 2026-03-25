@@ -17,7 +17,7 @@ module "workload1" {
 
   change_management_parameters = {
     change_requested_by = "Platform Team"
-    change_reason       = "Initial account provisioning via AFT"
+    change_reason       = "Retry after Sandbox OU enrollment in Control Tower"
   }
 
   custom_fields          = {}
