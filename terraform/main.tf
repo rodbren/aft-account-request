@@ -49,3 +49,29 @@ module "workload2" {
   custom_fields               = {}
   account_customizations_name = "sandbox"
 }
+
+module "workload3" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "rodogrc+aftworkload3@amazon.com"
+    AccountName               = "workload-3"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "rodogrc+aftworkload3@amazon.com"
+    SSOUserFirstName          = "Workload3"
+    SSOUserLastName           = "aft"
+  }
+
+  account_tags = {
+    Environment = "sandbox"
+    ManagedBy   = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Platform Team"
+    change_reason       = "Test provisioning customizations SNS notification"
+  }
+
+  custom_fields               = {}
+  account_customizations_name = "sandbox"
+}
