@@ -20,6 +20,32 @@ module "workload1" {
     change_reason       = "Retry after Sandbox OU enrollment in Control Tower"
   }
 
-  custom_fields          = {}
+  custom_fields               = {}
+  account_customizations_name = "sandbox"
+}
+
+module "workload2" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "rodogrc+aftworkload2@amazon.com"
+    AccountName               = "workload-2"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "rodogrc+aftworkload2@amazon.com"
+    SSOUserFirstName          = "Workload2"
+    SSOUserLastName           = "aft"
+  }
+
+  account_tags = {
+    Environment = "sandbox"
+    ManagedBy   = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Platform Team"
+    change_reason       = "Second account to test full AFT customization pipeline"
+  }
+
+  custom_fields               = {}
   account_customizations_name = "sandbox"
 }
