@@ -81,7 +81,7 @@ module "workload5" {
 
   control_tower_parameters = {
     AccountEmail              = "rodogrc+aftworkload5@amazon.com"
-    AccountName               = "workload-4"
+    AccountName               = "workload-5"
     ManagedOrganizationalUnit = "Sandbox"
     SSOUserEmail              = "rodogrc+aftworkload5@amazon.com"
     SSOUserFirstName          = "Workload5"
